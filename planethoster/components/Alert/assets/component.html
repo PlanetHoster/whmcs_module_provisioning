@@ -1,0 +1,8 @@
+<div :id="cid_" :class="[typeClass, outlineClass, sizeClass]" class="lu-alert lu-alert--faded" v-if="visible_" data-component="alert">
+    <div class="lu-alert__body" v-html="text_"></div>
+    <button @click="visible_ = false" class="lu-btn lu-btn--icon lu-btn--link lu-btn--close" data-dismiss="alert" type="button" v-if="dismiss_button_">
+        <i class="lu-btn__icon lu-zmdi lu-zmdi-close"></i>
+    </button>
+</div>
+
+
