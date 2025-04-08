@@ -13,7 +13,7 @@ class PlanetHosterAPI
 
     public function __construct($host, $apiUser, $apiKey, $httpprefix = 'https')
     {
-        $this->host = $host;
+        $this->host = 'api.planethoster.net';
         $this->apiUser = $apiUser;
         $this->apiKey = $apiKey;
         $this->apiVersion = 'v3';
