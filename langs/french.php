@@ -3,10 +3,10 @@
 $_LANG['actions.config_options.title'] = 'PlanetHoster Configuration';
 $_LANG['actions.config_options.customconfigoption[ls]'] = 'LiteSpeed Server';
 $_LANG['actions.config_options.customconfigoption[country]'] = 'Location';
-$_LANG['actions.config_options.customconfigoption[memory]'] = 'Memory [GB] (min 1 max 24)';
+$_LANG['actions.config_options.customconfigoption[memory]'] = 'Memory [GB])';
 $_LANG['actions.config_options.customconfigoption[cms_name]'] = 'CMS pre-installation (optional)';
-$_LANG['actions.config_options.customconfigoption[cpu]'] = 'CPUs (min 1 max 8)';
-$_LANG['actions.config_options.customconfigoption[io]'] = 'Disk I/O Bandwidth [MB/s] (min 1 max 24)';
+$_LANG['actions.config_options.customconfigoption[cpu]'] = 'CPUs';
+$_LANG['actions.config_options.customconfigoption[io]'] = 'Disk I/O Bandwidth [MB/s]';
 $_LANG['client.shared.account_details.pages.emails.email'] = 'Email';
 $_LANG['client.shared.account_details.pages.emails.quota'] = 'Quota (MB)';
 $_LANG['client.shared.account_details.buttons.add_account_email_button.title'] = 'Create Email Account';
