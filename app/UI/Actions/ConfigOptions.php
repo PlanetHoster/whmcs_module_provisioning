@@ -71,28 +71,6 @@ class ConfigOptions extends \ModulesGarden\PlanetHoster\Packages\Product\UI\Form
             $this->builder->addElement($alert);
         }
 
-        if($productConfig['cpu'] < 1 || $productConfig['cpu'] > 8)
-        {
-            $alert = new AlertDanger();
-            $alert->setText($this->translate('errorCPUValue'));
-            $this->builder->addElement($alert);
-        }
-
-        if($productConfig['io'] < 1 || $productConfig['io'] > 24)
-        {
-            $alert = new AlertDanger();
-            $alert->setText($this->translate('errorIOValue'));
-            $this->builder->addElement($alert);
-        }
-
-        if($productConfig['memory'] < 1 || $productConfig['memory'] > 24)
-        {
-            $alert = new AlertDanger();
-            $alert->setText($this->translate('errorMemValue'));
-            $this->builder->addElement($alert);
-        }
-
-
         $row = new Row();
 
         $generalSection2 = new Widget();
