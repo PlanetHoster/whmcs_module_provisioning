@@ -28,14 +28,22 @@ class CreateAccount extends Action
             $productConfig = (new ProductConfiguration($params['packageid']))->get();
 
             $newAccountParams = [
-                'ls' => true,
-                'country' => $productConfig['country'],
+                'ls' => $productConfig['ls'],
                 'domain' => $params['domain'],
-                'cpu' => $productConfig['cpu'],
-                'memory' => $productConfig['memory'],
-                'io' => $productConfig['io'],
+                'cpu' => (int)$productConfig['cpu'],
+                'memory' => (int)$productConfig['memory'],
+                'io' => (int)$productConfig['io'],
+                'disk_space' => (int)$productConfig['disk_space'],
                 'cms_name' => $productConfig['cms_name'],
             ];
+            // Ajouter 'country' si non vide
+            if (!empty($productConfig['country'])) {
+                $newAccountParams['location'] = $productConfig['country'];
+            } else {
+                // Ajouter 'hostname' seulement si 'country' est vide
+                $newAccountParams['location'] = $params['serverhostname'];
+            }
+            
             $account = $api->createAccount($newAccountParams);
 
             Service::where('id', $params['serviceid'])->update([

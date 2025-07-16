@@ -271,7 +271,7 @@ class PlanetHosterAPI
     protected function send($method, $action, $data = [])
     {
         if (!empty($data)) {
-            $query = http_build_query($data);
+            $query = json_encode($data);
         } else {
             $query = null;
         }
@@ -282,6 +282,7 @@ class PlanetHosterAPI
         $headers[] = 'X-API-USER: ' . $this->apiUser;
         $headers[] = 'X-API-KEY: ' . $this->apiKey;
         $headers[] = 'accept: application/json';
+        $headers[] = 'Content-Type: application/json';
         $url = $this->httpprefix.'://'.$this->host.'/'.$this->apiVersion.'/'.$action;
 
         curl_setopt($curl, CURLOPT_URL, $url);
