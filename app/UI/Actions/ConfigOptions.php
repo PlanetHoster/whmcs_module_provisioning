@@ -43,6 +43,13 @@ class ConfigOptions extends \ModulesGarden\PlanetHoster\Packages\Product\UI\Form
             $this->builder->addElement($alert);
         }
 
+        if(empty($productConfig['disk_space']) || !is_numeric($productConfig['disk_space']))
+        {
+            $alert = new AlertDanger();
+            $alert->setText(sprintf($this->translate('errorConfiguration'), 'Disk Quota'));
+            $this->builder->addElement($alert);
+        }        
+        
         if(empty($productConfig['email_quota']) || !is_numeric($productConfig['email_quota']))
         {
             $alert = new AlertDanger();
@@ -80,11 +87,12 @@ class ConfigOptions extends \ModulesGarden\PlanetHoster\Packages\Product\UI\Form
         $this->builder->addFieldInContainer($row, (new Switcher())->setName('customconfigoption[ls]'));
 
         $this->builder->addFieldInContainer($row, (new Dropdown())->setName('customconfigoption[country]')
-            ->setOptions(['CA' => 'CA', 'FR' => 'FR'])->setDefaultValueAsFirstOption());
+            ->setOptions(['','CA' => 'CA', 'FR' => 'FR'])->setDefaultValueAsFirstOption());
 
         $this->builder->addFieldInContainer($row, (new FormInputText())->setName('customconfigoption[cpu]')->setDefaultValue('2'));
         $this->builder->addFieldInContainer($row, (new FormInputText())->setName('customconfigoption[memory]')->setDefaultValue('4'));
         $this->builder->addFieldInContainer($row, (new FormInputText())->setName('customconfigoption[io]')->setDefaultValue('2'));
+        $this->builder->addFieldInContainer($row, (new FormInputText())->setName('customconfigoption[disk_space]')->setDefaultValue(100));
 
         $this->builder->addFieldInContainer($row, (new Dropdown())->setName('customconfigoption[cms_name]')
             ->setOptions(['' => 'None','wp' => 'Wordpress', 'joomla' => 'Joomla', 'prestashop' => 'Prestashop', 'drupal' => 'Drupal'])->setDefaultValueAsFirstOption());
