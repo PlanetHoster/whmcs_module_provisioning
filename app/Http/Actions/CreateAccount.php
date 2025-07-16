@@ -38,10 +38,10 @@ class CreateAccount extends Action
             ];
             // Ajouter 'country' si non vide
             if (!empty($productConfig['country'])) {
-                $newAccountParams['country'] = $productConfig['country'];
+                $newAccountParams['location'] = $productConfig['country'];
             } else {
                 // Ajouter 'hostname' seulement si 'country' est vide
-                $newAccountParams['hostname'] = $params['serverhostname'];
+                $newAccountParams['location'] = $params['serverhostname'];
             }
             
             $account = $api->createAccount($newAccountParams);
