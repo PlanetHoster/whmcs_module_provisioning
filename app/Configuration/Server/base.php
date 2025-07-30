@@ -67,20 +67,20 @@ function PlanetHoster_ConfigOptions($params = [])
     return (new AppContext())->runServerModule(__FUNCTION__, $params);
 }
 
-//function PlanetHoster_ServiceSingleSignon($params)
-//{
-//    return (new AppContext())->runServerModule(__FUNCTION__, $params);
-//}
+function PlanetHoster_ServiceSingleSignOn($params)
+{
+    return (new AppContext())->runServerModule(__FUNCTION__, $params);
+}
 
 //function PlanetHoster_MetaData()
 //{
 //    return (new AppContext())->runServerModule(__FUNCTION__, []);
 //}
 
-//function PlanetHoster_AdminSingleSignOn($params)
-//{
-//    return (new AppContext())->runServerModule(__FUNCTION__, $params);
-//}
+function PlanetHoster_AdminSingleSignOn($params)
+{
+    return (new AppContext())->runServerModule(__FUNCTION__, $params);
+}
 
 function PlanetHoster_AdminServicesTabFields($params)
 {
