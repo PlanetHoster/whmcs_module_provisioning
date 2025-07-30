@@ -37,19 +37,21 @@ class PlanetHosterAPI
 
     public function getInfoAccount($account_id)
     {
-        $results = $this->send('GET', 'the-world/info');
-        foreach ($results['world_accounts'] as $row) {
-          if($row['id'] == $account_id)
-          {
-            return $row;
-          }
-        }
-        throw new \Exception('The account does not exist.');
+        return $this->send('GET', 'hostings', [
+            'id' => $account_id
+        ]);
     }
 
     public function createAccount($params)
     {
         return $this->send('POST', 'hosting', $params);
+    }
+
+    public function loginPanel($id)
+    {
+        return $this->send('GET', 'hosting/login', [
+            'id' => $id
+        ]);
     }
 
     public function terminatedAccount($id, $username, $password)
