@@ -1,6 +1,6 @@
 <?php
 
-$_LANG['actions.config_options.title'] = 'PlanetHoster Configuration';
+$_LANG['actions.config_options.title'] = 'N0C Configuration';
 $_LANG['actions.config_options.customconfigoption[ls]'] = 'LiteSpeed Server';
 $_LANG['actions.config_options.customconfigoption[country]'] = 'Location';
 $_LANG['actions.config_options.customconfigoption[memory]'] = 'Memory [GB]';
@@ -25,7 +25,7 @@ $_LANG['client.shared.account_details.forms.add_account_email_form.quota'] = 'Qu
 $_LANG['client.shared.account_details.forms.add_account_email_form.quota_placeholder'] = '';
 $_LANG['client.shared.account_details.forms.add_account_email_form.formValidationError'] = 'Validation error, please correct this form';
 $_LANG['client.shared.account_details.forms.add_account_database_form.formValidationError'] = 'Validation error, please correct this form';
-$_LANG['client.shared.account_details.providers.email_account_provider.errorAccountId'] = 'This service does not have a PlanetHoster account assigned';
+$_LANG['client.shared.account_details.providers.email_account_provider.errorAccountId'] = 'This service does not have a N0C account assigned';
 $_LANG['client.shared.account_details.providers.email_account_provider.errorUsername'] = 'The username field can only be alphanumeric characters and cannot be longer than 40 characters';
 $_LANG['client.shared.account_details.providers.ftp_accounts_provider.errorUser'] = 'The user field can only be alphanumeric characters and cannot be longer than 40 characters';
 $_LANG['client.shared.account_details.providers.email_account_provider.errorCountAccount'] = 'This account cannot be created';
@@ -73,7 +73,7 @@ $_LANG['client.shared.account_details.forms.update_ftp_account_form.path'] = 'Di
 $_LANG['client.shared.account_details.forms.update_ftp_account_form.path_placeholder'] = '';
 $_LANG['client.shared.account_details.providers.ftp_accounts_provider.successAccountUpdate'] = 'The FTP account has been updated successfully';
 $_LANG['client.shared.account_details.providers.ftp_accounts_provider.successDeleted'] = 'The FTP account has been deleted successfully';
-$_LANG['client.shared.account_details.providers.ftp_accounts_provider.errorAccountId'] = 'This service does not have a PlanetHoster account assigned';
+$_LANG['client.shared.account_details.providers.ftp_accounts_provider.errorAccountId'] = 'This service does not have a N0C account assigned';
 $_LANG['client.shared.account_details.providers.ftp_accounts_provider.errorAPI'] = 'Unexpected error, please contact admin';
 $_LANG['client.shared.account_details.providers.ftp_accounts_provider.errorPassword'] = 'The password is too weak';
 $_LANG['client.shared.account_details.providers.ftp_accounts_provider.errorCountAccount'] = 'This account cannot be created';
@@ -84,7 +84,7 @@ $_LANG['client.shared.account_details.forms.add_account_database_form.username']
 $_LANG['client.shared.account_details.forms.add_account_database_form.database'] = 'Database Name';
 $_LANG['client.shared.account_details.forms.add_account_database_form.database_placeholder'] = '';
 $_LANG['client.shared.account_details.forms.add_account_database_form.username_placeholder'] = '';
-$_LANG['client.shared.account_details.providers.database_accounts_provider.errorAccountId'] = 'This service does not have a PlanetHoster account assigned';
+$_LANG['client.shared.account_details.providers.database_accounts_provider.errorAccountId'] = 'This service does not have a N0C account assigned';
 $_LANG['client.shared.account_details.providers.database_accounts_provider.errorAPI'] = 'Unexpected error, please contact admin';
 $_LANG['client.shared.account_details.providers.database_accounts_provider.errorPassword'] = 'The password is too weak';
 $_LANG['client.shared.account_details.providers.database_accounts_provider.errorCountAccount'] = 'This account cannot be created';
@@ -101,7 +101,7 @@ $_LANG['client.shared.account_details.forms.update_database_form.username'] = 'N
 $_LANG['client.shared.account_details.forms.update_database_form.username_new'] = 'New Username';
 $_LANG['client.shared.account_details.providers.database_account_provider.successDatabaseUpdate'] = 'The database has been updated successfully';
 $_LANG['client.shared.account_details.providers.database_account_provider.successDatabaseDeleted'] = 'The database has been deleted successfully';
-$_LANG['planetHoster'] = 'PlanetHoster';
+$_LANG['planetHoster'] = 'N0C';
 $_LANG['accountDetails'] = 'Account Details';
 $_LANG['emails'] = 'Email Accounts';
 $_LANG['ftpaccounts'] = 'FTP Accounts';
