@@ -55,6 +55,9 @@ class Details extends Container implements AjaxComponentInterface, ClientAreaInt
                       // CMS name (exemple, à adapter si besoin)
                       $serviceDetails['productconfig']['cms_name'] = !empty($account['cms_name']) ? $account['cms_name'] : 'none';
 
+                      // Temporary URL
+                      $serviceDetails['service']['temporary_url'] =  !empty($account['temporary_url']) ? $account['temporary_url'] : 'none';
+
                       // Status
                       if ($account['status'] == 'Active' || $account['status'] == 'active') {
                           $status = '<span class="label label-success">' . $account['status'] . '</span>';
@@ -117,6 +120,23 @@ class Details extends Container implements AjaxComponentInterface, ClientAreaInt
             $tableNew->addRecord(new Record([
                 $this->translate('password'),
                 (new TextShowHide())->setText($serviceDetails['service']['password']),
+            ]));
+
+            $tableNew->addRecord(new Record([
+                $this->translate('temporaryURL'),
+                (new TextShowHide())->setText($serviceDetails['service']['temporary_url']),
+            ]));
+
+            // Ajout des boutons d'action pour l'URL temporaire
+            $actions = '';
+            if (empty($serviceDetails['service']['temporary_url']) || $serviceDetails['service']['temporary_url'] === 'none') {
+                $actions = '<a href="index.php?mg-action=createTemporaryUrl&id=' . $serviceId . '" class="btn btn-primary">Créer une URL temporaire</a>';
+            } else {
+                $actions = '<a href="index.php?mg-action=deleteTemporaryUrl&id=' . $serviceId . '" class="btn btn-danger" onclick="return confirm(\'Confirmer la suppression de l\'URL temporaire ?\')">Supprimer l\'URL temporaire</a>';
+            }
+            $tableNew->addRecord(new Record([
+                '',
+                $actions
             ]));
 
             $tableNew->addRecord(new Record([

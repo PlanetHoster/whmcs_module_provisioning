@@ -77,6 +77,15 @@ class PlanetHosterAPI
         return $this->send('PUT', 'hosting', $params);
     }
 
+    public function createTemporaryUrl($params)
+    {
+        return $this->send('POST', 'hosting/temporary-url', $params);
+    }
+    public function removeTemporaryUrl($params)
+    {
+        return $this->send('DELETE', 'hosting/temporary-url', $params);
+    }
+
     public function createEmailAccount($params)
     {
         return $this->send('POST', 'hosting/email', $params);
@@ -327,7 +336,7 @@ class PlanetHosterAPI
             {
               throw new \Exception('errorPassword');
             }
-            
+
             if(is_array($data['errors']) && !empty($data['errors']))
             {
                 foreach ($data['errors'] as $errorRow)
@@ -340,34 +349,34 @@ class PlanetHosterAPI
                     {
                         throw new \Exception('errorPassword');
                     }
-                    
+
                     if(strpos($errorRow, 'beta to use PostgreSQL') !== false)
                     {
                         throw new \Exception('betaPostgreSQL');
                     }
-                    
+
                     if(strpos($errorRow, 'database user') !== false && strpos($errorRow, 'already exist') !== false)
                     {
                         throw new \Exception('alreadyExistsDatabaseUser');
                     }
-                    
+
                     if($action == 'hosting/database' && strpos($errorRow, 'already exist') !== false)
                     {
                         throw new \Exception('alreadyExistsDatabase');
                     }
-                    
+
                     if($errorRow == 'ER_CANNOT_USER' && $action == 'hosting/database/user')
                     {
                         throw new \Exception('alreadyExistsDatabaseUser');
                     }
-                    
+
                     if(strpos($errorRow, 'already exist') !== false)
                     {
                         throw new \Exception('alreadyExists');
                     }
                 }
             }
-            
+
             throw new \Exception('unexpectedError');
         }
 

@@ -113,6 +113,7 @@ $_LANG['client.shared.account_details.pages.details.domain'] = 'Domain';
 $_LANG['client.shared.account_details.pages.details.ip'] = 'IP';
 $_LANG['client.shared.account_details.pages.details.username'] = 'Username';
 $_LANG['client.shared.account_details.pages.details.password'] = 'Password';
+$_LANG['client.shared.account_details.pages.details.temporaryURL'] = 'Temporary Url';
 $_LANG['client.shared.account_details.pages.details.cpu'] = 'CPU';
 $_LANG['client.shared.account_details.pages.details.memory'] = 'Memory';
 $_LANG['client.shared.account_details.pages.details.i_o_bandwidth'] = 'I/O Bandwidth';
