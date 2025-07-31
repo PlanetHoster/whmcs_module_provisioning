@@ -39,20 +39,29 @@ class Details extends Container implements AjaxComponentInterface, ClientAreaInt
                   );
                   $results = $api->getInfoAccount($account_id);
 
-                  if($results['status'] == 'Active')
-                  {
-                    $status = '<span class="label label-success">' . $results['status'] . '</span>';
-                  }
-                  else
-                  {
-                    $status = '<span class="label label-warning">' . $results['status'] . '</span>';
-                  }
+                  if (!empty($results['hosting_accounts'][0])) {
+                      $account = $results['hosting_accounts'][0];
+                      $serviceDetails['service']['domain'] = $account['domain'];
+                      $serviceDetails['service']['username'] = $account['username'];
+                      $serviceDetails['service']['dedicatedip'] = $account['ip'];
+                      $serviceDetails['productconfig']['country'] = strtoupper($account['location']);
+                      $serviceDetails['productconfig']['cpu'] = $account['resources']['cpu'];
+                      $serviceDetails['productconfig']['memory'] = $account['resources']['mem'];
+                      $serviceDetails['productconfig']['io'] = $account['resources']['io'];
 
-                  $serviceDetails['productconfig']['country'] = strtoupper($results['location']);
-                  $serviceDetails['productconfig']['cpu'] = $results['resources']['cpu'];
-                  $serviceDetails['productconfig']['memory'] = $results['resources']['mem'];
-                  $serviceDetails['productconfig']['io'] = $results['resources']['io'];
+                      // Litespeed
+                      $serviceDetails['productconfig']['ls'] = $account['litespeed'] ? '1' : '0';
 
+                      // CMS name (exemple, à adapter si besoin)
+                      $serviceDetails['productconfig']['cms_name'] = !empty($account['cms_name']) ? $account['cms_name'] : 'none';
+
+                      // Status
+                      if ($account['status'] == 'Active' || $account['status'] == 'active') {
+                          $status = '<span class="label label-success">' . $account['status'] . '</span>';
+                      } else {
+                          $status = '<span class="label label-warning">' . $account['status'] . '</span>';
+                      }
+                  }
               }
 
           } catch (\Exception $e) {
