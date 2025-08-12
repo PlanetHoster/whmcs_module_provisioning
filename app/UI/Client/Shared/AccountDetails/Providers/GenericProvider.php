@@ -19,6 +19,8 @@ class GenericProvider extends CrudProvider
 {
     use TranslatorTrait;
 
+    public const ACTION_CREATE_TEMPORARY_URL     = 'createTemporaryUrl';
+    public const ACTION_REMOVE_TEMPORARY_URL     = 'removeTemporaryUrl';
     // public function phpMyAdmin()
     // {
     //     $serviceId = Request::get('id');
