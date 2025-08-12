@@ -9,7 +9,7 @@ use ModulesGarden\PlanetHoster\Components\HiddenField\HiddenField;
 use ModulesGarden\PlanetHoster\Core\Contracts\Components\ClientAreaInterface;
 use ModulesGarden\PlanetHoster\Core\Contracts\Components\AjaxComponentInterface;
 
-class CreateTemporaryUrlForm extends Form implements AjaxComponentInterface, ClientAreaInterface
+class DeleteTemporaryUrlForm extends Form implements AjaxComponentInterface, ClientAreaInterface
 {
     protected string $provider = GenericProvider::class;
     protected string $providerAction = GenericProvider::ACTION_REMOVE_TEMPORARY_URL;
