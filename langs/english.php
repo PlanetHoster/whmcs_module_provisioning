@@ -204,3 +204,10 @@ $_LANG['global.betaPostgreSQL'] = 'PostgreSQL is currently available only for sp
 $_LANG['client.shared.account_details.buttons.php_my_admin_button.title'] = 'PhpMyAdmin';
 $_LANG['client.shared.account_details.modals.php_my_admin_modal.title'] = 'PhpMyAdmin';
 $_LANG['client.shared.account_details.modals.php_my_admin_modal.phpmyadmin'] = 'Are you sure you want go to phpMyAdmin?';
+
+$_LANG['client.shared.account_details.buttons.create_temporary_url.button.title'] = 'Create Temporary URL';
+$_LANG['client.shared.account_details.buttons.create_temporary_url.button.confirm'] = 'Are you sure that you want to create a temporary URL?';
+$_LANG['client.shared.account_details.buttons.create_temporary_url.button.success'] = 'The temporary URL has been created successfully';
+$_LANG['client.shared.account_details.buttons.delete_temporary_url.button.title'] = 'Remove Temporary URL';
+$_LANG['client.shared.account_details.buttons.delete_temporary_url.button.confirm'] = 'Are you sure that you want to remove the temporary URL?';
+$_LANG['client.shared.account_details.buttons.delete_temporary_url.button.success'] = 'The temporary URL has been removed successfully';

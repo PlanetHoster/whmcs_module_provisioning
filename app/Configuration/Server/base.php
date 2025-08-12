@@ -45,6 +45,20 @@ function PlanetHoster_ChangePassword(array $params)
     return (new AppContext())->runServerModule(__FUNCTION__, $params);
 }
 
+function PlanetHoster_CreateTemporaryUrl(array $params)
+{
+    #MGLICENSE_CHECK_RETURN#
+
+    return (new AppContext())->runServerModule(__FUNCTION__, $params);
+}
+
+function PlanetHoster_DeleteTemporaryUrl(array $params)
+{
+    #MGLICENSE_CHECK_RETURN#
+
+    return (new AppContext())->runServerModule(__FUNCTION__, $params);
+}
+
 function PlanetHoster_ChangePackage(array $params)
 {
     #MGLICENSE_CHECK_RETURN#

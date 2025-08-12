@@ -38,7 +38,13 @@ return [
                 'uri'   => function() {
                     return URL\Client::productDetails(Request::get('id', 0), ['mg-action' => 'charts']);
                 }
-            ]
+            ],
+            Core\translate('client.shared.account_details.pages.details.temporaryURL') => [
+                'order' => 6,
+                'uri'   => function() {
+                    return URL\Client::productDetails(Request::get('id', 0), ['mg-action' => 'databases']);
+                }
+            ],
         ]
     ],
     'CustomFields'              => [
