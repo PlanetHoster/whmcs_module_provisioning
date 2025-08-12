@@ -121,13 +121,7 @@ class GenericProvider extends CrudProvider
             return (new Response())->setError(sprintf($this->translate($e->getMessage(), [], ['global']), '', ''));
 
         }
-        }
     }
 
-
-    public function getData()
-    {
-        return $this->data;
-    }
 
 }
