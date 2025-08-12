@@ -25,9 +25,8 @@ class ConfirmActionModal extends ModalEdit implements AjaxComponentInterface, Cl
     {
         $this->setTitle($this->titleText);
         $this->setContent($this->confirmationText);
-        $providerAction = $this->getRequestValue($this->actionName);
         $form = new GenericForm();
-        $form->setData($this->actionName, $providerAction);
+        $form->setData('providerAction', $this->actionName);
         $this->addElement($form);
     }
 }
