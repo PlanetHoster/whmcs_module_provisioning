@@ -205,9 +205,12 @@ $_LANG['client.shared.account_details.buttons.php_my_admin_button.title'] = 'Php
 $_LANG['client.shared.account_details.modals.php_my_admin_modal.title'] = 'PhpMyAdmin';
 $_LANG['client.shared.account_details.modals.php_my_admin_modal.phpmyadmin'] = 'Are you sure you want go to phpMyAdmin?';
 
-$_LANG['client.shared.account_details.buttons.create_temporary_url.button.title'] = 'Create Temporary URL';
-$_LANG['client.shared.account_details.buttons.create_temporary_url.button.confirm'] = 'Are you sure that you want to create a temporary URL?';
-$_LANG['client.shared.account_details.buttons.create_temporary_url.button.success'] = 'The temporary URL has been created successfully';
-$_LANG['client.shared.account_details.buttons.delete_temporary_url.button.title'] = 'Remove Temporary URL';
-$_LANG['client.shared.account_details.buttons.delete_temporary_url.button.confirm'] = 'Are you sure that you want to remove the temporary URL?';
-$_LANG['client.shared.account_details.buttons.delete_temporary_url.button.success'] = 'The temporary URL has been removed successfully';
+$_LANG['client.shared.account_details.buttons.create_temporary_url_button.title'] = 'Create Temporary URL';
+$_LANG['client.shared.account_details.modals.create_temporary_url_modal.title']  = 'Create Temporary URL';
+$_LANG['client.shared.account_details.modals.create_temporary_url_modal.confirm'] = 'Are you sure that you want to create a temporary URL?';
+$_LANG['client.shared.account_details.modals.create_temporary_url_modal.success'] = 'The temporary URL has been created successfully';
+
+$_LANG['client.shared.account_details.buttons.delete_temporary_url_button.title'] = 'Remove Temporary URL';
+$_LANG['client.shared.account_details.modals.delete_temporary_url_modal.title']  = 'Remove Temporary URL';
+$_LANG['client.shared.account_details.modals.delete_temporary_url_modal.confirm'] = 'Are you sure that you want to remove the temporary URL?';
+$_LANG['client.shared.account_details.modals.delete_temporary_url_modal.success'] = 'The temporary URL has been removed successfully';

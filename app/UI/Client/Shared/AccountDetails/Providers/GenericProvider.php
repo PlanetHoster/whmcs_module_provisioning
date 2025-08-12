@@ -15,7 +15,7 @@ use ModulesGarden\PlanetHoster\Core\Components\Actions\ReloadParent;
 use ModulesGarden\PlanetHoster\Core\Support\Facades\Validator;
 use function ModulesGarden\PlanetHoster\Core\Helper\redirect;
 
-class DatabaseAccountProvider extends CrudProvider
+class GenericProvider extends CrudProvider
 {
     use TranslatorTrait;
 
