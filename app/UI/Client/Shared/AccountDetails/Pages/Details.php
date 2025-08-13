@@ -12,6 +12,9 @@ use ModulesGarden\PlanetHoster\Core\Contracts\Components\AjaxComponentInterface;
 use ModulesGarden\PlanetHoster\Core\Support\Facades\Request;
 use ModulesGarden\PlanetHoster\App\Repositories\ServicesRepository;
 use ModulesGarden\PlanetHoster\App\Libs\PlanetHosterAPI;
+use ModulesGarden\PlanetHoster\Components\Link\Link;
+use ModulesGarden\PlanetHoster\App\UI\Client\Shared\AccountDetails\Buttons\CreateTemporaryUrlButton;
+use ModulesGarden\PlanetHoster\App\UI\Client\Shared\AccountDetails\Buttons\DeleteTemporaryUrlButton;
 
 class Details extends Container implements AjaxComponentInterface, ClientAreaInterface
 {
@@ -41,7 +44,13 @@ class Details extends Container implements AjaxComponentInterface, ClientAreaInt
 
                   if (!empty($results['hosting_accounts'][0])) {
                       $account = $results['hosting_accounts'][0];
-                      $serviceDetails['service']['domain'] = $account['domain'];
+
+                      $domain_link = new Link();
+                      $domain_link->setUrl('https://' . $account['domain']);
+                      $domain_link->setTitle($account['domain']);
+                      $domain_link->setTarget('_blank');
+
+                      //$serviceDetails['service']['domain'] = $link;
                       $serviceDetails['service']['username'] = $account['username'];
                       $serviceDetails['service']['dedicatedip'] = $account['ip'];
                       $serviceDetails['productconfig']['country'] = strtoupper($account['location']);
@@ -55,6 +64,13 @@ class Details extends Container implements AjaxComponentInterface, ClientAreaInt
                       // CMS name (exemple, à adapter si besoin)
                       $serviceDetails['productconfig']['cms_name'] = !empty($account['cms_name']) ? $account['cms_name'] : 'none';
 
+                      // Temporary URL
+                      $serviceDetails['service']['temporary_url'] =  !empty($account['temporary_url']) ? $account['temporary_url'] : 'none';
+                      if (!empty($account['temporary_url'])) {
+                          $actionButton = new DeleteTemporaryUrlButton();
+                      } else {
+                          $actionButton = new CreateTemporaryUrlButton();
+                      }
                       // Status
                       if ($account['status'] == 'Active' || $account['status'] == 'active') {
                           $status = '<span class="label label-success">' . $account['status'] . '</span>';
@@ -96,7 +112,7 @@ class Details extends Container implements AjaxComponentInterface, ClientAreaInt
 
             $tableNew->addRecord(new Record([
                 $this->translate('domain'),
-                '<b>' . $serviceDetails['service']['domain'] . '</b>',
+                $domain_link->getHtml(),
             ]));
 
             $tableNew->addRecord(new Record([
@@ -117,6 +133,12 @@ class Details extends Container implements AjaxComponentInterface, ClientAreaInt
             $tableNew->addRecord(new Record([
                 $this->translate('password'),
                 (new TextShowHide())->setText($serviceDetails['service']['password']),
+            ]));
+
+            $tableNew->addRecord(new Record([
+                $this->translate('temporaryURL'),
+                '<b>' . $serviceDetails['service']['temporary_url'] . '</b>' ,
+                $actionButton,
             ]));
 
             $tableNew->addRecord(new Record([

@@ -113,6 +113,7 @@ $_LANG['client.shared.account_details.pages.details.domain'] = 'Domain';
 $_LANG['client.shared.account_details.pages.details.ip'] = 'IP';
 $_LANG['client.shared.account_details.pages.details.username'] = 'Username';
 $_LANG['client.shared.account_details.pages.details.password'] = 'Password';
+$_LANG['client.shared.account_details.pages.details.temporaryURL'] = 'Temporary Url';
 $_LANG['client.shared.account_details.pages.details.cpu'] = 'CPU';
 $_LANG['client.shared.account_details.pages.details.memory'] = 'Memory';
 $_LANG['client.shared.account_details.pages.details.i_o_bandwidth'] = 'I/O Bandwidth';
@@ -203,3 +204,13 @@ $_LANG['global.betaPostgreSQL'] = 'PostgreSQL is currently available only for sp
 $_LANG['client.shared.account_details.buttons.php_my_admin_button.title'] = 'PhpMyAdmin';
 $_LANG['client.shared.account_details.modals.php_my_admin_modal.title'] = 'PhpMyAdmin';
 $_LANG['client.shared.account_details.modals.php_my_admin_modal.phpmyadmin'] = 'Are you sure you want go to phpMyAdmin?';
+
+$_LANG['client.shared.account_details.buttons.create_temporary_url_button.title'] = 'Create Temporary URL';
+$_LANG['client.shared.account_details.modals.create_temporary_url_modal.title']  = 'Create Temporary URL';
+$_LANG['client.shared.account_details.modals.create_temporary_url_modal.confirm'] = 'Are you sure that you want to create a temporary URL?';
+$_LANG['client.shared.account_details.providers.generic_provider.successCreateTemporaryUrl'] = 'The temporary URL has been created successfully';
+
+$_LANG['client.shared.account_details.buttons.delete_temporary_url_button.title'] = 'Remove Temporary URL';
+$_LANG['client.shared.account_details.modals.delete_temporary_url_modal.title']  = 'Remove Temporary URL';
+$_LANG['client.shared.account_details.modals.delete_temporary_url_modal.confirm'] = 'Are you sure that you want to remove the temporary URL?';
+$_LANG['client.shared.account_details.providers.generic_provider.successDeleteTemporaryUrl'] = 'The temporary URL has been removed successfully';
