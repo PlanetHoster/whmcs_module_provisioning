@@ -7,6 +7,7 @@ $_LANG['actions.config_options.customconfigoption[memory]'] = 'Memory [GB]';
 $_LANG['actions.config_options.customconfigoption[cms_name]'] = 'CMS pre-installation (optional)';
 $_LANG['actions.config_options.customconfigoption[cpu]'] = 'CPUs';
 $_LANG['actions.config_options.customconfigoption[io]'] = 'Disk I/O Bandwidth [MB/s]';
+$_LANG['actions.config_options.customconfigoption[disk_space]'] = 'Disk Quota [GB]';
 $_LANG['client.shared.account_details.pages.emails.email'] = 'Email';
 $_LANG['client.shared.account_details.pages.emails.quota'] = 'Quota (MB)';
 $_LANG['client.shared.account_details.buttons.add_account_email_button.title'] = 'Create Email Account';
