@@ -208,9 +208,9 @@ $_LANG['client.shared.account_details.modals.php_my_admin_modal.phpmyadmin'] = '
 $_LANG['client.shared.account_details.buttons.create_temporary_url_button.title'] = 'Créer une URL temporaire';
 $_LANG['client.shared.account_details.modals.create_temporary_url_modal.title']  = 'Créer une URL temporaire';
 $_LANG['client.shared.account_details.modals.create_temporary_url_modal.confirm'] = 'Etes-vous sûr que vous voulez créer une URL temporaire ?';
-$_LANG['client.shared.account_details.modals.create_temporary_url_modal.success'] = 'URL temporaire créée avec succès';
+$_LANG['client.shared.account_details.providers.generic_provider.successCreateTemporaryUrl'] = 'URL temporaire créée avec succès';
 
 $_LANG['client.shared.account_details.buttons.delete_temporary_url_button.title'] = 'Supprimer l\'URL temporaire';
 $_LANG['client.shared.account_details.modals.delete_temporary_url_modal.title']  = 'Supprimer l\'URL temporaire';
 $_LANG['client.shared.account_details.modals.delete_temporary_url_modal.confirm'] = 'Etes-vous sur de vouloir supprimer l\'URL temporaire ?';
-$_LANG['client.shared.account_details.modals.delete_temporary_url_modal.success'] = 'URL tempo The temporary URL has been removed successfully';
+$_LANG['client.shared.account_details.providers.generic_provider.successDeleteTemporaryUrl'] = 'URL tempo The temporary URL has been removed successfully';

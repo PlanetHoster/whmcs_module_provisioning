@@ -11,7 +11,7 @@ use ModulesGarden\PlanetHoster\Core\Components\Traits\TranslatorTrait;
 use ModulesGarden\PlanetHoster\Core\DataProviders\CrudProvider;
 use ModulesGarden\PlanetHoster\Core\Support\Facades\Request;
 use ModulesGarden\PlanetHoster\Core\Components\Response\Response;
-use ModulesGarden\PlanetHoster\Core\Components\Actions\ReloadParent;
+use ModulesGarden\PlanetHoster\Core\Components\Actions\ReloadById;
 use ModulesGarden\PlanetHoster\Core\Support\Facades\Validator;
 use function ModulesGarden\PlanetHoster\Core\Helper\redirect;
 
@@ -82,7 +82,9 @@ class GenericProvider extends CrudProvider
                 'id' => $account_id,
             ]);
 
-            return (new Response())->setActions([new ReloadParent()]);
+            return (new Response())
+                ->setSuccess($this->translate('successRemoveTemporaryUrl'))
+                ->setActions([new Redirect('/clientarea.php?action=productdetails&id=' . $serviceId )]);
 
         } catch (\Exception $e) {
 
@@ -116,7 +118,9 @@ class GenericProvider extends CrudProvider
                 'id' => $account_id,
             ]);
 
-            return (new Response())->setActions([new ReloadParent()]);
+            return (new Response())
+                ->setSuccess($this->translate('successCreateTemporaryUrl'))
+                ->setActions([new Redirect('/clientarea.php?action=productdetails&id=' . $serviceId )]);
 
         } catch (\Exception $e) {
 
